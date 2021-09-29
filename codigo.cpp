@@ -4,6 +4,6 @@ auto soma(auto a, auto b) {
     return a + b;
 }
 int main() {
-    std::cout << soma(5, 6) << '\n';
+    std::cout << soma(10, 25) << '\n';
     return 0;
 }
