@@ -1,29 +1,21 @@
 #include <iostream>
+#include <vector>
 
-using namespace std;
-
-float soma(float numero01, float numero02)
-{
-    cout << "Estamos fazendo soma de floats aqui.\n";
-    float resultado;
-    resultado = numero01 + numero02;
-    return resultado;
-}
-
-int soma(int numero01, int numero02)
-{
-    cout << "Estamos fazendo soma de inteiros aqui.\n";
-    int resultado;
-    resultado = numero01 + numero02;
-    return resultado;
+std::vector<int> impares(std::vector<int> vet) {
+    std::vector<int> impares;
+    for (int x : vet) {
+        if (x % 2 == 1) {
+            impares.push_back(x);
+        }
+    }
+    return impares;
 }
 
 int main() {
-    float numero_float_1 = 5.3;
-    float numero_float_2 = 4.9;
-    cout << "Soma de floats = " << soma(numero_float_1, numero_float_2) << "\n";
-    int numero_inteiro_1 = 4;
-    int numero_inteiro_2 = 6;
-    cout << "Soma de inteiros = " << soma(numero_inteiro_1, numero_inteiro_2) << "\n                                                                                                            ";
-    return 0;
+    std::vector<int> v = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    std::vector<int> result = impares(v);
+    for (int x : result) {
+        std::cout << x << " ";
+    }
+    std::cout << "\n";
 }
