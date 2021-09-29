@@ -1,20 +1,23 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
-std::vector<int> impares(std::vector<int> vet) {
-    std::vector<int> impares;
-    for (int x : vet) {
-        if (x % 2 == 1) {
-            impares.push_back(x);
-        }
-    }
-    return impares;
+bool existe(std::vector<int> vet, int valor) {
+    for (int i = 0; i < vet.size(); i++)
+        if(vet[i] == valor)
+            return true;
+    return false;
 }
 
+int procura(std::vector<int> vet, int valor) {
+    for (int i = 0; i < vet.size(); i++)
+        if(vet[i] == valor)
+            return i;
+    return -1;
+}
+
+
 int main() {
-    std::vector<int> result = impares({1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
-    for (int x : result) {
-        std::cout << x << " ";
-    }
-    std::cout << "\n";
+    std::cout << existe({1, 2, 3, 4, 5}, 7) << '\n';
+    std::cout << existe({1, 2, 3, 4, 5}, 4) << '\n';
 }
